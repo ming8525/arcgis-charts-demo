@@ -12,16 +12,17 @@ export const ConfigEditor = (props) => {
   const ref = React.useRef(null)
   const handleRef = useForkRef(ref, editorRef)
 
-  const handlePresetConfigChange = (config) => {
-    ref.current.jsonEditor.set(config)
-    onChange?.(config)
+  const handlePresetConfigChange = (json) => {
+    ref.current.jsonEditor.set(json.config)
+    onChange?.(json.config, json.service)
   }
+  
 
   return <Stack spacing={2} direction="column" className="config-editor w-100 h-100">
     <Stack spacing={2} direction="row" className="header">
       {
-        Object.entries(defaultConfigs).map(([type, config]) => {
-          return <Button key={type} variant="outlined" onClick={() => handlePresetConfigChange(config)}>{type}</Button>
+        Object.entries(defaultConfigs).map(([type, json]) => {
+          return <Button key={type} variant="outlined" onClick={() => handlePresetConfigChange(json)}>{type}</Button>
         })
       }
     </Stack>
