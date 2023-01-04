@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from "@emotion/styled";
-import configs from './config/default.json'
+import defaultConfigs from './config/default.json'
 import { JsonEditor, ConfigEditor, ChartComponent, LayerFactory } from './components';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
@@ -9,14 +9,52 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './root.css';
 
-const defaultConfigs = configs.default
-
-const DefaultServices = ['https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0',
-  'https://services9.arcgis.com/pJENMVYPQqZZe20v/arcgis/rest/services/Ontario_Daily_Case_Progression/FeatureServer/0']
+const DefaultType = 'histogram'
 
 
 const defaultRuntimeFilters = { where: '1=1' }
-// const defaultRuntimeFilters = { timeExtent: [1579564800000, 1582243200000] }
+
+/*
+const defaultRuntimeFilters = {
+  "where": "1=1",
+  "geometry": {
+    "hasZ": true,
+    "spatialReference": {
+      "latestWkid": 3857,
+      "wkid": 102100
+    },
+    "rings": [
+      [
+        [
+          -9769821.647248657,
+          5133195.904378366,
+          0
+        ],
+        [
+          -9752040.861436835,
+          5133195.904378366,
+          0
+        ],
+        [
+          -9752040.861436835,
+          5125146.139167771,
+          0
+        ],
+        [
+          -9769821.647248657,
+          5125146.139167771,
+          0
+        ],
+        [
+          -9769821.647248657,
+          5133195.904378366,
+          0
+        ]
+      ]
+    ]
+  }
+}
+*/
 
 const Root = styled(Stack)`
   width: 100%;
@@ -33,26 +71,27 @@ const Root = styled(Stack)`
 `
 
 const App = () => {
-  const editorRef = React.useRef(null)
-  const [service, setService] = React.useState(DefaultServices[0])
+  const runtimeDataEditorRef = React.useRef(null)
   const [layer, setLayer] = React.useState(null)
-  const [dataSource, setDataSource] = React.useState(null)
-
-  const [rawWebMapWebChart, setRawWebMapWebChart] = React.useState(defaultConfigs.bar)
-  const [rawRuntimeFilters, setRawRuntimeFilters] = React.useState(defaultRuntimeFilters)
+  
+  const [service, setService] = React.useState(defaultConfigs[DefaultType].service)
+  const [rawWebMapWebChart, setRawWebMapWebChart] = React.useState(defaultConfigs[DefaultType].config)
+  const [rawRuntimeFilters, setRawRuntimeFilters] = React.useState(defaultConfigs[DefaultType].runtimeDataFilters)
 
   const [webMapWebChart, setWebMapWebChart] = React.useState()
   const [runtimeFilters, setRuntimeFilters] = React.useState(rawRuntimeFilters)
 
   const [activeUpdateChart, setActiveUpdateChart] = React.useState(true)
 
-  const updateChartReady = (!!layer || !!dataSource?.featureLayer) && rawWebMapWebChart && rawRuntimeFilters
+  const updateChartReady = !!layer  && rawWebMapWebChart && rawRuntimeFilters
 
-  const handleRawWebMapWebChartChange = (config, service) => {
-
+  const handleRawWebMapWebChartChange = (config, runtimeDataFilters, service) => {
     setRawWebMapWebChart(config)
     if (service) {
       setService(service)
+    }
+    if(runtimeDataFilters && runtimeDataEditorRef.current){
+      runtimeDataEditorRef.current.jsonEditor.set(runtimeDataFilters)
     }
     setActiveUpdateChart(true)
   }
@@ -74,18 +113,18 @@ const App = () => {
     </div>
     <Stack spacing={2} className='right-part' direction="column">
       <Stack spacing={2} direction="row" className='w-100'>
-        <LayerFactory className='flex-fill' service={service} onCreateLayer={setLayer} onCreateDataSource={setDataSource} />
+        <LayerFactory className='flex-fill' service={service} onCreateLayer={setLayer} />
         <Button variant="outlined" disabled={!updateChartReady} color={activeUpdateChart ? 'primary' : 'inherit'} onClick={handleUpdateChart}>Update Chart</Button>
       </Stack>
       <Stack spacing={2} direction="row" className='flex-fill'>
         <Box className='w-30 h-100'>
           <Typography variant='h5'>Runtime data filters:</Typography>
           <Box className='w-100' sx={{ height: 'calc(100% - 32px)' }}>
-            <JsonEditor defaultValue={rawRuntimeFilters} onChange={handleRawRuntimeFiltersChange} />
+            <JsonEditor ref={runtimeDataEditorRef} defaultValue={rawRuntimeFilters} onChange={handleRawRuntimeFiltersChange} />
           </Box>
         </Box>
         <Box className='flex-fill'>
-          {(layer || dataSource) && webMapWebChart && <ChartComponent dataSource={dataSource} webMapWebChart={webMapWebChart} featureLayer={layer} runtimeDataFilters={runtimeFilters} />}
+          {(layer || dataSource) && webMapWebChart && <ChartComponent webMapWebChart={webMapWebChart} featureLayer={layer} runtimeDataFilters={runtimeFilters} />}
         </Box>
       </Stack>
     </Stack>
