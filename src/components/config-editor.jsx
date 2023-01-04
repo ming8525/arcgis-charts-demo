@@ -14,7 +14,7 @@ export const ConfigEditor = (props) => {
 
   const handlePresetConfigChange = (json) => {
     ref.current.jsonEditor.set(json.config)
-    onChange?.(json.config, json.service)
+    onChange?.(json.config, json.runtimeDataFilters, json.service)
   }
   
 

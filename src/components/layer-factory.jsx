@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import clsx from "clsx";
 
 const CacheLayers = {}
@@ -18,28 +19,28 @@ const createFeatureLayer = (url) => {
   }
 }
 
-const createFeatureLayerDataSource = (url) => {
-  return {
-    type: 'featureLayer',
-    featureLayer: {
-      layerType: 'ArcGISFeatureLayer',
-      id: "",
-      url
-    }
-  }
-}
-
 export const LayerFactory = (props) => {
-  const { service, onCreateDataSource, onCreateLayer, className } = props
+  const { service, onCreateLayer, className } = props
   const [url, setUrl] = React.useState(service)
+  const [created, setCreated] = React.useState(false)
 
   React.useEffect(() => {
     setUrl(service)
+    setCreated(false)
   }, [service])
+
+  const handleURLChange = (e) => {
+    const url = e.target.value
+    setUrl(service)
+    if(created) {
+      setCreated(false)
+    }
+  }
 
   const handleLayerCreated = () => {
     const fl = createFeatureLayer(url)
     fl && onCreateLayer?.(fl)
+    setCreated(true)
   }
 
   const handleDataSourceCreated = () => {
@@ -48,10 +49,9 @@ export const LayerFactory = (props) => {
   }
 
   return (<Stack spacing={2} direction="column" className={clsx('layer-factory', className)}>
-    <TextField id="standard-basic" label="Please enter service URL" variant="standard" value={url} onChange={e => setUrl(e.target.value)} />
+    <TextField id="standard-basic" label="Please enter service URL" variant="standard" value={url} onChange={handleURLChange} />
     <Stack spacing={2} direction="row">
-      <Button className="w-50" variant="outlined" disabled={!url} onClick={handleLayerCreated}>Create API layer</Button>
-      <Button className="w-50" variant="outlined" disabled={!url} onClick={handleDataSourceCreated}>Create Feature Layer data source</Button>
+      <Button className="flex-fill" variant="outlined" disabled={!url} onClick={handleLayerCreated} endIcon={created && <CheckCircleIcon color='success' />}>Create API layer</Button>
     </Stack>
   </Stack>)
 }
