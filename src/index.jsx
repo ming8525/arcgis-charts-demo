@@ -7,12 +7,11 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PendingIcon from '@mui/icons-material/Pending';
 import './root.css';
 
 const DefaultType = 'histogram'
-
-
-const defaultRuntimeFilters = { where: '1=1' }
 
 /*
 const defaultRuntimeFilters = {
@@ -114,7 +113,7 @@ const App = () => {
     <Stack spacing={2} className='right-part' direction="column">
       <Stack spacing={2} direction="row" className='w-100'>
         <LayerFactory className='flex-fill' service={service} onCreateLayer={setLayer} />
-        <Button variant="outlined" disabled={!updateChartReady} color={activeUpdateChart ? 'primary' : 'inherit'} onClick={handleUpdateChart}>Update Chart</Button>
+        <Button variant="outlined" disabled={!updateChartReady} color='primary' endIcon={(updateChartReady && !activeUpdateChart) ? <CheckCircleIcon color='success' /> : <PendingIcon />} onClick={handleUpdateChart}>Update Chart</Button>
       </Stack>
       <Stack spacing={2} direction="row" className='flex-fill'>
         <Box className='w-30 h-100'>
@@ -124,7 +123,7 @@ const App = () => {
           </Box>
         </Box>
         <Box className='flex-fill'>
-          {(layer || dataSource) && webMapWebChart && <ChartComponent webMapWebChart={webMapWebChart} featureLayer={layer} runtimeDataFilters={runtimeFilters} />}
+          {layer && webMapWebChart && <ChartComponent placeholder="Waiting" webMapWebChart={webMapWebChart} featureLayer={layer} runtimeDataFilters={runtimeFilters} />}
         </Box>
       </Stack>
     </Stack>

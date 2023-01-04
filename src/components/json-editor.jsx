@@ -5,6 +5,8 @@ import 'jsoneditor-react/es/editor.min.css'
 import { useForkRef } from '../utils'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PendingIcon from '@mui/icons-material/Pending';
 
 const defaultProps = {
   tag: 'div',
@@ -47,6 +49,6 @@ export const JsonEditor = React.forwardRef((props, ref) => {
 
   return (<Root spacing={2} direction="column" className="json-editor">
     <Editor ref={handleRef} value={defaultValue} onChange={() => setActive(true)} onError={() => setDisabled(true)} {...defaultProps} />
-    <Button variant="outlined" color={active ? 'primary' : 'inherit'} disabled={disabled} onClick={handleChange}>Update</Button>
+    <Button variant="outlined" color='primary' endIcon={!active ? <CheckCircleIcon color='success' /> : <PendingIcon /> } disabled={disabled} onClick={handleChange}>Update</Button>
   </Root>)
 })

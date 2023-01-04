@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PendingIcon from '@mui/icons-material/Pending';
 import clsx from "clsx";
 
 const CacheLayers = {}
@@ -51,7 +52,7 @@ export const LayerFactory = (props) => {
   return (<Stack spacing={2} direction="column" className={clsx('layer-factory', className)}>
     <TextField id="standard-basic" label="Please enter service URL" variant="standard" value={url} onChange={handleURLChange} />
     <Stack spacing={2} direction="row">
-      <Button className="flex-fill" variant="outlined" disabled={!url} onClick={handleLayerCreated} endIcon={created && <CheckCircleIcon color='success' />}>Create API layer</Button>
+      <Button className="flex-fill" variant="outlined" disabled={!url} onClick={handleLayerCreated} endIcon={created ? <CheckCircleIcon color='success' /> : <PendingIcon />}>Create API layer</Button>
     </Stack>
   </Stack>)
 }

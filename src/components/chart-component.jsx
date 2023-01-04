@@ -72,6 +72,7 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
     chartLimits,
     actionMode,
     noDataOptions,
+    placeholder: createMessage,
 
     autoDisposeChart,
     enableResponsiveFeatures,
@@ -103,16 +104,19 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
 
   React.useEffect(() => {
     ref.current.runtimeDataFilters = runtimeDataFilters
+    console.log('runtimeDataFilters', runtimeDataFilters)
   }, [runtimeDataFilters])
 
   React.useEffect(() => {
     ref.current.selectionData = selectionData
     ref.current.chartLimits = chartLimits
     ref.current.actionMode = actionMode
+    ref.current.createMessage = createMessage
   }, [
     selectionData,
     chartLimits,
-    actionMode
+    actionMode,
+    createMessage
   ])
 
   React.useEffect(() => {
