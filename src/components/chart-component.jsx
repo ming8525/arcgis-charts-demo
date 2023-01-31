@@ -104,7 +104,6 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
 
   React.useEffect(() => {
     ref.current.runtimeDataFilters = runtimeDataFilters
-    console.log('runtimeDataFilters', runtimeDataFilters)
   }, [runtimeDataFilters])
 
   React.useEffect(() => {

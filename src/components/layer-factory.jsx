@@ -32,7 +32,7 @@ export const LayerFactory = (props) => {
 
   const handleURLChange = (e) => {
     const url = e.target.value
-    setUrl(service)
+    setUrl(url)
     if(created) {
       setCreated(false)
     }

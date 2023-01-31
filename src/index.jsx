@@ -11,7 +11,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PendingIcon from '@mui/icons-material/Pending';
 import './root.css';
 
-const DefaultType = 'histogram'
+const DefaultType = 'test'
 
 /*
 const defaultRuntimeFilters = {
@@ -83,6 +83,10 @@ const App = () => {
   const [activeUpdateChart, setActiveUpdateChart] = React.useState(true)
 
   const updateChartReady = !!layer  && rawWebMapWebChart && rawRuntimeFilters
+
+  React.useEffect(() => {
+    document.documentElement.setAttribute('lang', 'he')
+  }, [])
 
   const handleRawWebMapWebChartChange = (config, runtimeDataFilters, service) => {
     setRawWebMapWebChart(config)
