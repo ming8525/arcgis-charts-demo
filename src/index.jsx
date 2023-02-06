@@ -11,7 +11,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PendingIcon from '@mui/icons-material/Pending';
 import './root.css';
 
-const DefaultType = 'test'
+const DefaultType = 'bar'
 
 
 const Root = styled(Stack)`
