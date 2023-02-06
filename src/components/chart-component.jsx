@@ -64,7 +64,7 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
 
   const {
     className,
-    webMapWebChart,
+    config,
     featureLayer,
 
     runtimeDataFilters,
@@ -92,15 +92,16 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
     arcgisChartsNoRenderPropChange
   } = props
 
-  const seriesType = getSeriesType(webMapWebChart)
+  const seriesType = getSeriesType(config)
   const component = getChartComponentTag(seriesType)
 
+
   React.useEffect(() => {
-    ref.current.config = webMapWebChart
+    ref.current.config = config
     if (featureLayer) {
       ref.current.featureLayer = featureLayer
     }
-  }, [webMapWebChart, featureLayer])
+  }, [config, featureLayer])
 
   React.useEffect(() => {
     ref.current.runtimeDataFilters = runtimeDataFilters
