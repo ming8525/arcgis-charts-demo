@@ -21,7 +21,7 @@ const createFeatureLayer = (url) => {
 }
 
 export const LayerFactory = (props) => {
-  const { service, onCreateLayer, className } = props
+  const { disabled = false,service, onCreateLayer, className } = props
   const [url, setUrl] = React.useState(service)
   const [created, setCreated] = React.useState(false)
 
@@ -32,7 +32,7 @@ export const LayerFactory = (props) => {
 
   const handleURLChange = (e) => {
     const url = e.target.value
-    setUrl(service)
+    setUrl(url)
     if(created) {
       setCreated(false)
     }
@@ -50,9 +50,9 @@ export const LayerFactory = (props) => {
   }
 
   return (<Stack spacing={2} direction="column" className={clsx('layer-factory', className)}>
-    <TextField id="standard-basic" label="Please enter service URL" variant="standard" value={url} onChange={handleURLChange} />
+    <TextField id="standard-basic" label="Please enter service URL" variant="standard" disabled={disabled} value={url} onChange={handleURLChange} />
     <Stack spacing={2} direction="row">
-      <Button className="flex-fill" variant="outlined" disabled={!url} onClick={handleLayerCreated} endIcon={created ? <CheckCircleIcon color='success' /> : <PendingIcon />}>Create API layer</Button>
+      <Button className="flex-fill" variant="outlined" disabled={disabled || !url} onClick={handleLayerCreated} endIcon={created ? <CheckCircleIcon color='success' /> : <PendingIcon />}>Create API layer</Button>
     </Stack>
   </Stack>)
 }

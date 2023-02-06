@@ -6,6 +6,10 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from "@mui/material/Box"
 
+const defaultRuntimeDataFilters = {
+  where: '1=1'
+}
+
 export const ConfigEditor = (props) => {
   const { defaultValue, editorRef, onChange } = props
 
@@ -14,7 +18,7 @@ export const ConfigEditor = (props) => {
 
   const handlePresetConfigChange = (json) => {
     ref.current.jsonEditor.set(json.config)
-    onChange?.(json.config, json.runtimeDataFilters, json.service)
+    onChange?.(json.config, json.runtimeDataFilters ?? defaultRuntimeDataFilters, json.service)
   }
   
 
