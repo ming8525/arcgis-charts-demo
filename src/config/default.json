@@ -1,776 +1,17 @@
 {
-  "bar": {
-    "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+  "default": {
     "config": {
       "version": "1.0.0",
-      "id": "widget_1-column",
-      "type": "chart",
-      "series": [
-        {
-          "type": "barSeries",
-          "id": "FID",
-          "name": "Count",
-          "x": "Year",
-          "y": "FID_count",
-          "colorType": "singleColor",
-          "stackedType": "sideBySide",
-          "fillSymbol": {
-            "type": "esriSFS",
-            "style": "esriSFSSolid",
-            "color": [
-              94,
-              143,
-              208,
-              255
-            ],
-            "outline": {
-              "type": "esriSLS",
-              "style": "esriSLSSolid",
-              "color": [
-                130,
-                130,
-                130,
-                255
-              ],
-              "width": 0
-            }
-          },
-          "dataLabels": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                54,
-                54,
-                54,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 10,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "top"
-            }
-          },
-          "rotated": false,
-          "query": {
-            "groupByFieldsForStatistics": [
-              "Year"
-            ],
-            "outStatistics": [
-              {
-                "statisticType": "count",
-                "onStatisticField": "FID",
-                "outStatisticFieldName": "FID_count"
-              }
-            ],
-            "orderByFields": [
-              "Year ASC"
-            ]
-          }
-        }
-      ],
-      "axes": [
-        {
-          "type": "chartAxis",
-          "visible": true,
-          "isLogarithmic": false,
-          "title": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                24,
-                24,
-                24,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "labels": {
-            "type": "chartText",
-            "visible": true,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                68,
-                68,
-                68,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "valueFormat": {
-            "type": "category",
-            "characterLimit": 11
-          },
-          "lineSymbol": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              139,
-              139,
-              139,
-              255
-            ],
-            "width": 1
-          },
-          "grid": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              213,
-              213,
-              213,
-              255
-            ],
-            "width": 0
-          }
-        },
-        {
-          "type": "chartAxis",
-          "visible": true,
-          "isLogarithmic": false,
-          "title": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                24,
-                24,
-                24,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "labels": {
-            "type": "chartText",
-            "visible": true,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                68,
-                68,
-                68,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "valueFormat": {
-            "type": "number",
-            "intlOptions": {
-              "style": "decimal",
-              "useGrouping": true,
-              "minimumFractionDigits": 0,
-              "maximumFractionDigits": 0
-            }
-          },
-          "lineSymbol": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              139,
-              139,
-              139,
-              255
-            ],
-            "width": 1
-          },
-          "grid": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              213,
-              213,
-              213,
-              255
-            ],
-            "width": 0
-          }
-        }
-      ],
-      "background": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "title": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            0,
-            0,
-            0,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 24,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "text": ""
-        }
-      },
-      "footer": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            24,
-            24,
-            24,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 14,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "text": ""
-        }
-      },
-      "legend": {
-        "type": "chartLegend",
-        "visible": false,
-        "title": {
-          "type": "chartText",
-          "visible": true,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              24,
-              24,
-              24,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 20,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "text": ""
-          }
-        },
-        "body": {
-          "type": "esriTS",
-          "color": [
-            24,
-            24,
-            24,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 14,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "text": ""
-        },
-        "position": "right"
-      }
-    },
-    "runtimeDataFilters": {
-      "where": "1=1"
-    }
-  },
-  "histogram": {
-    "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
-    "config": {
-      "version": "1.0.0",
-      "id": "widget_15-histogram",
-      "type": "chart",
-      "series": [
-        {
-          "type": "histogramSeries",
-          "colorType": "singleColor",
-          "id": "ID",
-          "name": "ID",
-          "x": "ID",
-          "binCount": 15,
-          "overlays": {
-            "type": "chartOverlays",
-            "mean": {
-              "type": "chartOverlay",
-              "visible": false,
-              "created": false,
-              "symbol": {
-                "type": "esriSLS",
-                "style": "esriSLSDash",
-                "color": [
-                  166,
-                  206,
-                  227,
-                  255
-                ],
-                "width": 1
-              }
-            },
-            "median": {
-              "type": "chartOverlay",
-              "visible": false,
-              "created": false,
-              "symbol": {
-                "type": "esriSLS",
-                "style": "esriSLSDash",
-                "color": [
-                  51,
-                  160,
-                  44,
-                  255
-                ],
-                "width": 1
-              }
-            },
-            "standardDeviation": {
-              "type": "chartOverlay",
-              "visible": false,
-              "created": false,
-              "symbol": {
-                "type": "esriSLS",
-                "style": "esriSLSDash",
-                "color": [
-                  178,
-                  223,
-                  138,
-                  255
-                ],
-                "width": 1
-              }
-            },
-            "comparisonDistribution": {
-              "type": "chartOverlay",
-              "visible": false,
-              "created": false,
-              "symbol": {
-                "type": "esriSLS",
-                "color": [
-                  227,
-                  26,
-                  28,
-                  255
-                ],
-                "width": 1
-              }
-            }
-          },
-          "dataTransformationType": "none",
-          "fillSymbol": {
-            "type": "esriSFS",
-            "style": "esriSFSSolid",
-            "color": [
-              94,
-              143,
-              208,
-              255
-            ],
-            "outline": {
-              "type": "esriSLS",
-              "style": "esriSLSSolid",
-              "color": [
-                130,
-                130,
-                130,
-                255
-              ],
-              "width": 0
-            }
-          },
-          "dataLabels": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                54,
-                54,
-                54,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 10,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "right",
-              "verticalAlignment": "middle"
-            }
-          },
-          "rotated": false
-        }
-      ],
-      "axes": [
-        {
-          "type": "chartAxis",
-          "visible": true,
-          "isLogarithmic": false,
-          "title": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                24,
-                24,
-                24,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "labels": {
-            "type": "chartText",
-            "visible": true,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                68,
-                68,
-                68,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "valueFormat": {
-            "type": "number",
-            "intlOptions": {
-              "style": "decimal",
-              "notation": "standard",
-              "minimumFractionDigits": 0,
-              "maximumFractionDigits": 2
-            }
-          },
-          "lineSymbol": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              139,
-              139,
-              139,
-              255
-            ],
-            "width": 1
-          },
-          "grid": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              213,
-              213,
-              213,
-              255
-            ],
-            "width": 0
-          }
-        },
-        {
-          "type": "chartAxis",
-          "visible": true,
-          "isLogarithmic": false,
-          "title": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                24,
-                24,
-                24,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "labels": {
-            "type": "chartText",
-            "visible": true,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                68,
-                68,
-                68,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "valueFormat": {
-            "type": "number",
-            "intlOptions": {
-              "style": "decimal",
-              "notation": "standard",
-              "minimumFractionDigits": 0,
-              "maximumFractionDigits": 0
-            }
-          },
-          "lineSymbol": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              139,
-              139,
-              139,
-              255
-            ],
-            "width": 1
-          },
-          "grid": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              213,
-              213,
-              213,
-              255
-            ],
-            "width": 0
-          }
-        }
-      ],
-      "background": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "title": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            0,
-            0,
-            0,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 24,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "text": ""
-        }
-      },
-      "footer": {
-        "type": "chartText",
-        "visible": true,
-        "content": {
-          "type": "esriTS",
-          "color": [
-            24,
-            24,
-            24,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 14,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "text": ""
-        }
-      },
-      "legend": {
-        "type": "chartLegend",
-        "visible": false,
-        "title": {
-          "type": "chartText",
-          "visible": true,
-          "content": {
-            "type": "esriTS",
-            "color": [
-              24,
-              24,
-              24,
-              255
-            ],
-            "font": {
-              "family": "Avenir Next",
-              "size": 20,
-              "style": "normal",
-              "weight": "normal",
-              "decoration": "none"
-            },
-            "horizontalAlignment": "center",
-            "text": ""
-          }
-        },
-        "body": {
-          "type": "esriTS",
-          "color": [
-            24,
-            24,
-            24,
-            255
-          ],
-          "font": {
-            "family": "Avenir Next",
-            "size": 14,
-            "style": "normal",
-            "weight": "normal",
-            "decoration": "none"
-          },
-          "horizontalAlignment": "center",
-          "text": ""
-        },
-        "position": "right"
-      }
-    },
-    "runtimeDataFilters": {
-      "where": "1=1",
-      "geometry": {
-        "hasZ": true,
-        "spatialReference": {
-          "latestWkid": 3857,
-          "wkid": 102100
-        },
-        "rings": [
-          [
-            [
-              -9773996.180156462,
-              5152596.792225918,
-              0
-            ],
-            [
-              -9755317.207943482,
-              5152596.792225918,
-              0
-            ],
-            [
-              -9755317.207943482,
-              5146019.790427471,
-              0
-            ],
-            [
-              -9773996.180156462,
-              5146019.790427471,
-              0
-            ],
-            [
-              -9773996.180156462,
-              5152596.792225918,
-              0
-            ]
-          ]
-        ]
-      }
-    }
-  },
-  "pie": {
-    "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
-    "config": {
-      "version": "1.0.0",
-      "id": "widget_1-donut",
+      "id": "widget_2-donut",
       "type": "chart",
       "series": [
         {
           "type": "pieSeries",
           "colorType": "colorMatch",
-          "id": "FID",
-          "name": "Count",
-          "x": "Year",
-          "y": "FID_count",
+          "id": "value",
+          "name": "Sum of Value",
+          "x": "name",
+          "y": "value",
           "innerRadius": 60,
           "startAngle": 0,
           "endAngle": 360,
@@ -846,7 +87,7 @@
           },
           "slices": [
             {
-              "sliceId": "2010",
+              "sliceId": "District",
               "fillSymbol": {
                 "type": "esriSFS",
                 "style": "esriSFSSolid",
@@ -870,7 +111,7 @@
               }
             },
             {
-              "sliceId": "2011",
+              "sliceId": "Ward",
               "fillSymbol": {
                 "type": "esriSFS",
                 "style": "esriSFSSolid",
@@ -894,7 +135,7 @@
               }
             },
             {
-              "sliceId": "2012",
+              "sliceId": "Community",
               "fillSymbol": {
                 "type": "esriSFS",
                 "style": "esriSFSSolid",
@@ -902,78 +143,6 @@
                   223,
                   107,
                   53,
-                  255
-                ],
-                "outline": {
-                  "type": "esriSLS",
-                  "style": "esriSLSSolid",
-                  "color": [
-                    240,
-                    240,
-                    240,
-                    255
-                  ],
-                  "width": 1
-                }
-              }
-            },
-            {
-              "sliceId": "2013",
-              "fillSymbol": {
-                "type": "esriSFS",
-                "style": "esriSFSSolid",
-                "color": [
-                  219,
-                  207,
-                  78,
-                  255
-                ],
-                "outline": {
-                  "type": "esriSLS",
-                  "style": "esriSLSSolid",
-                  "color": [
-                    240,
-                    240,
-                    240,
-                    255
-                  ],
-                  "width": 1
-                }
-              }
-            },
-            {
-              "sliceId": "2014",
-              "fillSymbol": {
-                "type": "esriSFS",
-                "style": "esriSFSSolid",
-                "color": [
-                  65,
-                  84,
-                  109,
-                  255
-                ],
-                "outline": {
-                  "type": "esriSLS",
-                  "style": "esriSLSSolid",
-                  "color": [
-                    240,
-                    240,
-                    240,
-                    255
-                  ],
-                  "width": 1
-                }
-              }
-            },
-            {
-              "sliceId": "2015",
-              "fillSymbol": {
-                "type": "esriSFS",
-                "style": "esriSFSSolid",
-                "color": [
-                  130,
-                  87,
-                  194,
                   255
                 ],
                 "outline": {
@@ -1086,229 +255,196 @@
           "text": ""
         },
         "position": "right"
+      },
+      "dataSource": {
+        "type": "inline",
+        "processed": true
       }
     },
-    "runtimeDataFilters": {
-      "where": "1=1"
+    "inlineData": {
+      "inputData": [
+        {
+          "name": "Community",
+          "value": 5565,
+          "FID": "46958530-a697-11ed-80f8-8d596133d711",
+          "objectid": 0
+        },
+        {
+          "name": "District",
+          "value": 1508,
+          "FID": "46958531-a697-11ed-80f8-8d596133d711",
+          "objectid": 1
+        },
+        {
+          "name": "Ward",
+          "value": 2892,
+          "FID": "46958532-a697-11ed-80f8-8d596133d711",
+          "objectid": 2
+        }
+      ],
+      "processed": true
     }
   },
-  "scatterplot": {
-    "service": "https://servicesdev.arcgis.com/f126c8da131543019b05e4bfab6fc6ac/arcgis/rest/services/ChicagoCr/FeatureServer/0",
+  "updated": {
     "config": {
       "version": "1.0.0",
-      "id": "widget_1-scatter",
+      "id": "widget_2-donut",
       "type": "chart",
       "series": [
         {
-          "type": "scatterSeries",
-          "colorType": "singleColor",
-          "id": "Ward",
-          "name": "Ward",
-          "x": "District",
-          "y": "Ward",
-          "markerSymbol": {
-            "type": "esriSMS",
-            "style": "esriSMSCircle",
+          "type": "pieSeries",
+          "colorType": "colorMatch",
+          "id": "value",
+          "name": "Sum of Value",
+          "x": "name",
+          "y": "value",
+          "innerRadius": 60,
+          "startAngle": 0,
+          "endAngle": 360,
+          "displayNumericValueOnDataLabel": true,
+          "displayPercentageOnDataLabel": false,
+          "displayNumericValueOnTooltip": true,
+          "displayPercentageOnTooltip": true,
+          "dataLabelsOffset": 0,
+          "sliceGrouping": {
+            "percentageThreshold": 0,
+            "groupName": "Other"
+          },
+          "numericValueFormat": {
+            "type": "number",
+            "intlOptions": {
+              "style": "decimal",
+              "useGrouping": true,
+              "minimumFractionDigits": 0,
+              "maximumFractionDigits": 3
+            }
+          },
+          "percentValueFormat": {
+            "type": "number",
+            "intlOptions": {
+              "style": "decimal",
+              "useGrouping": true,
+              "minimumFractionDigits": 0,
+              "maximumFractionDigits": 3
+            }
+          },
+          "fillSymbol": {
+            "type": "esriSFS",
+            "style": "esriSFSSolid",
             "color": [
-              94,
-              143,
-              208,
+              214,
+              214,
+              214,
               255
             ],
-            "size": 7,
             "outline": {
               "type": "esriSLS",
               "style": "esriSLSSolid",
               "color": [
-                130,
-                130,
-                130,
+                240,
+                240,
+                240,
                 255
               ],
-              "width": 0
+              "width": 1
             }
           },
-          "overlays": {
-            "type": "chartOverlays",
-            "trendLine": {
-              "type": "chartOverlay",
-              "created": true,
-              "visible": true,
-              "symbol": {
-                "type": "esriSLS",
-                "style": "esriSLSSolid",
+          "dataLabels": {
+            "type": "chartText",
+            "visible": false,
+            "content": {
+              "type": "esriTS",
+              "color": [
+                54,
+                54,
+                54,
+                255
+              ],
+              "font": {
+                "family": "Avenir Next",
+                "size": 10,
+                "style": "normal",
+                "weight": "normal",
+                "decoration": "none"
+              },
+              "horizontalAlignment": "center",
+              "verticalAlignment": "top"
+            }
+          },
+          "slices": [
+            {
+              "sliceId": "District",
+              "fillSymbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  214,
+                  85,
+                  139,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSSolid",
+                  "color": [
+                    240,
+                    240,
+                    240,
+                    255
+                  ],
+                  "width": 1
+                }
+              }
+            },
+            {
+              "sliceId": "Ward",
+              "fillSymbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
+                "color": [
+                  119,
+                  180,
+                  132,
+                  255
+                ],
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSSolid",
+                  "color": [
+                    240,
+                    240,
+                    240,
+                    255
+                  ],
+                  "width": 1
+                }
+              }
+            },
+            {
+              "sliceId": "Community",
+              "fillSymbol": {
+                "type": "esriSFS",
+                "style": "esriSFSSolid",
                 "color": [
                   223,
                   107,
                   53,
                   255
                 ],
-                "width": 3
+                "outline": {
+                  "type": "esriSLS",
+                  "style": "esriSLSSolid",
+                  "color": [
+                    240,
+                    240,
+                    240,
+                    255
+                  ],
+                  "width": 1
+                }
               }
             }
-          }
-        }
-      ],
-      "axes": [
-        {
-          "type": "chartAxis",
-          "visible": true,
-          "isLogarithmic": false,
-          "title": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                24,
-                24,
-                24,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "labels": {
-            "type": "chartText",
-            "visible": true,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                68,
-                68,
-                68,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "valueFormat": {
-            "type": "number",
-            "intlOptions": {
-              "style": "decimal",
-              "notation": "standard",
-              "minimumFractionDigits": 0,
-              "maximumFractionDigits": 0
-            }
-          },
-          "lineSymbol": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              139,
-              139,
-              139,
-              255
-            ],
-            "width": 1
-          },
-          "grid": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              213,
-              213,
-              213,
-              255
-            ],
-            "width": 0
-          }
-        },
-        {
-          "type": "chartAxis",
-          "visible": true,
-          "isLogarithmic": false,
-          "title": {
-            "type": "chartText",
-            "visible": false,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                24,
-                24,
-                24,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "labels": {
-            "type": "chartText",
-            "visible": true,
-            "content": {
-              "type": "esriTS",
-              "color": [
-                68,
-                68,
-                68,
-                255
-              ],
-              "font": {
-                "family": "Avenir Next",
-                "size": 14,
-                "style": "normal",
-                "weight": "normal",
-                "decoration": "none"
-              },
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle"
-            }
-          },
-          "valueFormat": {
-            "type": "number",
-            "intlOptions": {
-              "style": "decimal",
-              "notation": "standard",
-              "minimumFractionDigits": 0,
-              "maximumFractionDigits": 0
-            }
-          },
-          "lineSymbol": {
-            "type": "esriSLS",
-            "style": "esriSLSSolid",
-            "color": [
-              139,
-              139,
-              139,
-              255
-            ],
-            "width": 1
-          },
-          "grid": {
-            "type": "esriSLS",
-            "style": "esriSLSDash",
-            "color": [
-              213,
-              213,
-              213,
-              255
-            ],
-            "width": 0
-          }
+          ]
         }
       ],
       "background": [
@@ -1405,10 +541,37 @@
           "text": ""
         },
         "position": "right"
+      },
+      "dataSource": {
+        "type": "inline",
+        "processed": true
       }
     },
-    "runtimeDataFilters": {
-      "where": "1=1"
+    "inlineData": {
+      "inputData": [
+        {
+          "name": "Community",
+          "value": 5565,
+          "FID": "46958530-a697-11ed-80f8-8d596133d711",
+          "objectid": 0,
+          "arcgis_charts_slice_percent": 55.84545910687406
+        },
+        {
+          "name": "District",
+          "value": 1508,
+          "FID": "46958531-a697-11ed-80f8-8d596133d711",
+          "objectid": 1,
+          "arcgis_charts_slice_percent": 15.13296537882589
+        },
+        {
+          "name": "Ward",
+          "value": 2892,
+          "FID": "46958532-a697-11ed-80f8-8d596133d711",
+          "objectid": 2,
+          "arcgis_charts_slice_percent": 29.021575514300054
+        }
+      ],
+      "processed": true
     }
   }
 }

@@ -58,6 +58,8 @@ const getChartComponentTag = (seriesType) => {
   }
 }
 
+const defaultChartLimits = { maxBarUniqueSeriesCountTotal: 1000, maxBarTwoSeriesCountTotal: 1000, maxBarThreePlusSeriesCountTotal: 1000, maxPieChartSliceCountTotal: 300 }
+
 export const ChartComponent = React.forwardRef((props, chartRef) => {
   const ref = React.useRef(null)
   const handleRef = useForkChartRef(ref, chartRef)
@@ -66,20 +68,21 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
     className,
     config,
     featureLayer,
+    inlineData,
 
     runtimeDataFilters,
     selectionData,
-    chartLimits,
+    chartLimits = defaultChartLimits,
     actionMode,
     noDataOptions,
     placeholder: createMessage,
 
-    autoDisposeChart,
-    enableResponsiveFeatures,
-    hideLicenceWatermark,
-    queueChartCreation,
-    useAnimatedCharts,
-    hideLoaderAnimation,
+    autoDisposeChart = true,
+    enableResponsiveFeatures = false,
+    hideLicenceWatermark = true,
+    queueChartCreation = true,
+    useAnimatedCharts = false,
+    hideLoaderAnimation = true,
 
     arcgisChartsDataProcessComplete,
     arcgisChartsLegendItemVisibilityChange,
@@ -98,8 +101,13 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
 
   React.useEffect(() => {
     ref.current.config = config
-    if (featureLayer) {
-      ref.current.featureLayer = featureLayer
+    //If update config and inline-data(feature layer) at the same time, the update of data will be ignored
+    if (ref.current) {
+      if (featureLayer) {
+        ref.current.featureLayer = featureLayer
+      } else {
+        ref.current.inlineData = inlineData
+      }
     }
   }, [config, featureLayer])
 
