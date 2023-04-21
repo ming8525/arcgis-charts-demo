@@ -1,11 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const toBeCopied = [
-    { from: './node_modules/@arcgis/charts-components/dist/arcgis-charts-components/t9n', to: './arcgis-charts/t9n' }
-]
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -35,7 +30,6 @@ const config = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html")
         }),
-        new CopyWebpackPlugin({ patterns: toBeCopied })
     ],
     module: {
         rules: [
