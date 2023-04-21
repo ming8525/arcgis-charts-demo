@@ -34,8 +34,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@arcgis/charts-components": "v1.0.0-beta.454",
-    "@arcgis/charts-js": "v1.0.0-beta.454",
+    "@arcgis/charts-components": "1.0.0-beta.499",
+    "@arcgis/charts-js": "1.0.0-beta.499",
     "@arcgis/core": "^4.25.5",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

@@ -65,7 +65,7 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
   const {
     className,
     config,
-    featureLayer,
+    layer,
 
     runtimeDataFilters,
     selectionData,
@@ -93,15 +93,13 @@ export const ChartComponent = React.forwardRef((props, chartRef) => {
   } = props
 
   const seriesType = getSeriesType(config)
-  const component = getChartComponentTag(seriesType)
-
 
   React.useEffect(() => {
     ref.current.config = config
-    if (featureLayer) {
-      ref.current.featureLayer = featureLayer
+    if (layer) {
+      ref.current.layer = layer
     }
-  }, [config, featureLayer])
+  }, [config, layer])
 
   React.useEffect(() => {
     ref.current.runtimeDataFilters = runtimeDataFilters
